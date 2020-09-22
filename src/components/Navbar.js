@@ -1,10 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "./Button";
 import "./Navbar.css";
 import Dropdown from "./Dropdown";
 
 export default function Navbar() {
+    const [scrolled,setScrolled]=useState(false);
+    const handleScroll=() => {
+        const offset=window.scrollY;
+        if(offset > 200 ){
+          setScrolled(true);
+        }
+        else{
+          setScrolled(false);
+        }
+      }
+    
+      useEffect(() => {
+        window.addEventListener('scroll',handleScroll)
+      })
+    let navbarClasses=['navbar'];
+      if(scrolled){
+        navbarClasses.push('scrolled');
+      }
+
+
+
+
 const [click,setClick] = useState(false)
 const [dropdown,setDropdown] = useState(false)
 
@@ -28,7 +50,7 @@ const onMouseLeave =() =>{
 }
   return (
     <>
-      <nav className="navbar">
+      <nav className={navbarClasses.join(" ")}>
           <Link to='/' className ='navbar-logo'>
               Truelight Baptist Church
           </Link>

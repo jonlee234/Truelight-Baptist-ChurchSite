@@ -1,0 +1,17 @@
+.page-container{
+padding:30px;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.7), 
+        rgba(0, 0, 0, 0.7)
+      ),url(../images/churchpic-1.jpeg)center center/cover no-repeat;
+
+}
+
+.about-us-text{
+    color: #fff;
+    text-shadow: 2px 2px 4px #000000;
+    
+}
+
+
+

@@ -1,9 +1,13 @@
 import React from 'react'
+import HeroBanner from '../HeroBanner'
+import AboutUs from './AboutUs'
 
 function Home() {
     return (
         <>
-           <h1 className= 'home'>Truelight</h1> 
+           <HeroBanner/>
+           <AboutUs/>
+
         </>
     )
 }
